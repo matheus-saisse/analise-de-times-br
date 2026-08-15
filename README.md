@@ -16,10 +16,6 @@ Analisar com dados, como o Flamengo evoluiu ao longo de 22 temporadas do Brasile
 | 4. Dashboard interativo | Power BI, DAX | [`docs/RELATORIO_POWERBI.md`](docs/RELATORIO_POWERBI.md) |
 
 
-## Dataset original
-
-[Campeonato Brasileiro — Kaggle](https://www.kaggle.com/datasets/adaoduque/campeonato-brasileiro-de-futebol/data), com 4 tabelas: partidas, gols, cartões e estatísticas, cobrindo 2003–2025. O dataset foi intencionalmente "sujado" (`dirtify_data.py`) para prática de limpeza de dados com pandas.
-
 ## Estrutura do repositório
 
 ```
