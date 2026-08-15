@@ -29,7 +29,6 @@ Durante a construção do ranking de artilheiros, foi identificado que o dataset
 ### Metodologia de investigação
 Em vez de corrigir nomes "no olho", foi feita uma busca sistemática por candidatos a duplicata, usando um **self-join** (a tabela de nomes únicos de atletas cruzada com ela mesma) procurando onde um nome está contido dentro de outro. A busca inicial trouxe falsos positivos (ex: "Nan" "dentro" de "Fer**nan**do", por coincidência de substring) 
 
-Cada candidato encontrado foi verificado comparando a **faixa de `partida_id`** das duas variações: sobreposição temporal (ou uma sucessão sem sobreposição, sugerindo mudança de convenção ao longo do tempo).
 ### Casos confirmados e corrigidos
 | Nome no dataset | Nome normalizado | Evidência |
 |---|---|---|
@@ -39,10 +38,10 @@ Cada candidato encontrado foi verificado comparando a **faixa de `partida_id`** 
 A correção foi implementada com uma **tabela de mapeamento** (`mapeamento_nomes_atletas`) em vez de alterar os dados originais ou usar `CASE WHEN` fixo na view — permite adicionar novos casos verificados no futuro sem editar a lógica da view.
 
 ## 4. Principais achados da análise
-- Evolução do Flamengo por ano: 2015 foi o pior ano da década (16V/12E/18D); 2018–2019 foi o auge, culminando no titulo do campeonato de 2019 (28 vitórias).
+- Evolução do Flamengo por ano: 2015 foi o pior ano da década (16V/12E/18D); 2018–2019 foi o auge, culminando no titulo do campeonato de 2019.
 - Comparando os 4 times do RJ, o Flamengo lidera em pontos totais na base.
-- Em 2021, Vasco e Botafogo aparecem com poucos jogos registrados (11–13) porque foram **rebaixados para a Série B ao final de 2020** — só restaram os jogos atrasados da temporada 2020 (que se estendeu até fevereiro de 2021 por causa da pandemia).
-- Gabriel Barbosa (Gabigol) é o artilheiro histórico do Flamengo no recorte coberto pela base (2014–2025), com 64 gols.
+- Em 2021, Vasco e Botafogo aparecem com poucos jogos registrados (11–13) porque foram **rebaixados para a Série B ao final de 2020** — só restaram os jogos atrasados da temporada 2020.
+- Gabriel Barbosa (Gabigol) é o artilheiro histórico do Flamengo no recorte coberto pela base, com 64 gols.
 
 ## 5. Limitações conhecidas
 - O agrupamento por `YEAR(data)` distorce especificamente 2020 e 2021, por causa do calendário atrasado da pandemia.
